@@ -131,6 +131,7 @@ func downHandle(w http.ResponseWriter, r *http.Request) {
 	}()
 	res2.Header.Del("Access-Control-Allow-Origin")
 	res2.Header.Del("set-cookie")
+	res2.Header.Del("Alt-Svc")
 	maps.Copy(w.Header(), res2.Header)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")

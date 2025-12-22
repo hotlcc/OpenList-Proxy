@@ -158,6 +158,7 @@ async function handleDownload(request) {
   }
   response = new Response(response.body, response);
   response.headers.delete("set-cookie");
+  response.headers.delete("Alt-Svc");
   response.headers.set("Access-Control-Allow-Origin", origin);
   response.headers.append("Vary", "Origin");
   return response;
